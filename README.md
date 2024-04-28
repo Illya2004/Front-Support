@@ -15,6 +15,3 @@ Second part of backend side has profile and user requests functionality. You can
 Our designer made beautiful desing for this application.
 
 # Figma - you can look the full desing.
-
-Deployment of the project mini guide
-Download the project -> unzip it -> run next command - "docker-compose up"
