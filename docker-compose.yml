@@ -1,0 +1,29 @@
+version: '3'
+services:
+
+
+  fastapi:
+    build:
+      context: ./fastapi-app
+      dockerfile: Dockerfile-fastapi
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./fastapi-app:/app
+  springboot:
+    build:
+      context: ./springboot-app
+      dockerfile: Dockerfile-springboot
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./springboot-app:/app
+  database:
+    image: postgres:16.2
+    restart: always
+    environment:
+      POSTGRES_DB: front-support
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"

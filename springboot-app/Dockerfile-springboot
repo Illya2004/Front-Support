@@ -1,0 +1,14 @@
+# Use a base image that includes Java 17
+FROM openjdk:17-oracle
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the JAR file into the container
+COPY target/backend-java.jar /app/backend-java.jar
+
+# Expose port 8080 to the outside world
+EXPOSE 8080
+
+# Command to run the application
+CMD ["java", "-jar", "backend-java.jar"]
