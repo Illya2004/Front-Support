@@ -1,6 +1,17 @@
 # Use the official Python image as a base
 FROM python:3.13.0a6-bookworm
 
+# Install Rust and Cargo
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    rustc \
+    cargo && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set the PATH to include Rust and Cargo
+ENV PATH="/usr/bin/cargo:${PATH}"
+
 # Set the working directory in the container
 WORKDIR /app
 
