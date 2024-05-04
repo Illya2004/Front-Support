@@ -8,5 +8,3 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
-
-# postgresql://fronts_user:nP999s9eXD78RSxc@45.142.215.49:5432/front_support?sslmode=require
