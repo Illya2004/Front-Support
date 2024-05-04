@@ -50,10 +50,10 @@ def generate_random_password(length=10):
 
 
 def send_password_email(email_user, password_user):
-    smtp_server = 'mail.frontsupport.pp.ua'
-    port = 587
-    email_address = 'help@frontsupport.pp.ua'
-    password = 'gB8jV9lN8a'
+    smtp_server = '' # your smtp server
+    port = 587 # tls port (465 for ssl)
+    email_address = '' # your mail
+    password = '' # password for mail
     try:
         server = smtplib.SMTP(smtp_server, port)
         server.login(email_address, password)
